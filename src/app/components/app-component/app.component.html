@@ -1,11 +1,11 @@
-<p>Hi, I'm some text <span [appPopup]="imPopup">Hover On Me</span> that displays when hovering some text.</p>
+<p>Hi, I'm some text <span class="hover-area" [appPopup]="imPopup">Hover On Me</span> that displays when hovering some text.</p>
 
 <ng-template #imPopup>
-  <p>COOL POPUP</p>
+  <div>COOL POPUP</div>
 </ng-template>
 
 
-<app-popup>
-  <span>Hover On Me</span>
-  <span class="popup">My Popup Content</span>
+<app-popup class="better-popup">
+  <span class="hover-area">Hover on me, Im a better version for a Popup!</span>
+  <span id="popupContent">My Popup Content</span>
 </app-popup>

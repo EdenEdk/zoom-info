@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "build-popup-element":"ng build --output-hashing=none",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
