@@ -1,0 +1,3 @@
+<div (mouseenter)="togglePopup(true)" (mouseleave)="togglePopup(false)">
+  <ng-content select=".popup" *ngIf="visible"></ng-content>
+</div>
