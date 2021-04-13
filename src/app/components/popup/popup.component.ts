@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
-  styleUrls: ['./popup.component.css']
+  styleUrls: ['./popup.component.css'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class PopupComponent {
   visible: boolean;
@@ -12,3 +13,4 @@ export class PopupComponent {
     this.visible = visible;
   }
 }
+

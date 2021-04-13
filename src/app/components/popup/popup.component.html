@@ -1,6 +1,6 @@
 <span class="popup-trigger" (mouseenter)="togglePopup(true)" (mouseleave)="togglePopup(false)">
-    <ng-content></ng-content>
+    <slot name="popupTrigger"></slot>
   </span>
 <span class="popup" *ngIf="visible">
-      <ng-content select="[id=popupContent]"></ng-content>
+      <slot name="popupContent"></slot>
 </span>

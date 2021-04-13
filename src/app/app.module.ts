@@ -1,22 +1,23 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {AppComponent} from './components/app-component/app.component';
-import {APP_COMPONENTS} from './components/components';
-import {APP_DIRECTIVES} from './directives/directives';
+import {Injector, NgModule} from '@angular/core';
+import {PopupComponent} from './components/popup/popup.component';
+import {createCustomElement} from '@angular/elements';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ...APP_COMPONENTS,
-    ...APP_DIRECTIVES
+    PopupComponent
   ],
   imports: [
     BrowserModule
   ],
-  entryComponents: [...APP_COMPONENTS],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [PopupComponent],
+  providers: []
 })
 export class AppModule {
+  constructor(private injector:Injector){}
+  ngDoBootstrap() {
+    const el = createCustomElement(PopupComponent, { injector: this.injector });
+    customElements.define('eden-popup', el);
+  }
 }
 
